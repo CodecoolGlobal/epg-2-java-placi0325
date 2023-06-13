@@ -12,7 +12,7 @@ const ProductTable = ( { products } ) => {
               </tr>
             </thead>
             <tbody className="productlistContainer">
-              {products.map((product) => (
+              {products && products.map((product) => (
                 <tr key={product.id}>
                  <td>
                  <ProductLayoutInList product={product} />

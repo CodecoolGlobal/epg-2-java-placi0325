@@ -1,14 +1,16 @@
 package com.codecool.elproyectegrande.controller;
 
-import com.codecool.elproyectegrande.controller.dto.ClientDTO;
+import com.codecool.elproyectegrande.controller.dto.NewClientDTO;
+import com.codecool.elproyectegrande.dao.model.Client;
 import com.codecool.elproyectegrande.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("clients")
 public class ClientController {
 
         private ClientService clientService;
@@ -18,14 +20,17 @@ public class ClientController {
             this.clientService = clientService;
         }
 
-        /*@GetMapping
-        public List<ClientDTO> getAllUsers(){return clientService.getAllUsers();
+        @GetMapping
+        public List<Client> getAllClients(){return clientService.getAllClients();}
+
         @GetMapping("/{id}")
-        public ClientDTO getUserByID(@PathVariable String id){
-            return clientService.getUserByID(Integer.parseInt(id));
+        public Client getClientByID(@PathVariable Long id){
+            return clientService.getClientByID(id);
         }
+
         @PostMapping
-        public void addNewProduct(@RequestBody NewUserDTO userDTO){
-            clientService.addNewUser(userDTO);
-        }*/
+        public ResponseEntity addNewClient(@RequestBody NewClientDTO clientDTO){
+            clientService.addNewClient(clientDTO);
+            return ResponseEntity.ok().build();
+        }
 }

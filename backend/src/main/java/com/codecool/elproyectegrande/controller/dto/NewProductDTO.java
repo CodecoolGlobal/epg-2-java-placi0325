@@ -1,4 +1,6 @@
 package com.codecool.elproyectegrande.controller.dto;
 
-public record NewProductDTO(String name,String description,int clientID, double price) {
+import com.codecool.elproyectegrande.dao.model.Client;
+
+public record NewProductDTO(String name, String description, Client client, double price) {
 }

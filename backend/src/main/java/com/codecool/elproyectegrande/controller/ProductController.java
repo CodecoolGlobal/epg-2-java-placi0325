@@ -2,9 +2,10 @@ package com.codecool.elproyectegrande.controller;
 
 
 import com.codecool.elproyectegrande.controller.dto.NewProductDTO;
-import com.codecool.elproyectegrande.controller.dto.ProductDTO;
+import com.codecool.elproyectegrande.dao.model.Product;
 import com.codecool.elproyectegrande.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,17 +21,18 @@ public class ProductController {
         this.productService = productService;
     }
 
-    /*@GetMapping
-    public List<ProductDTO> getAllProducts(){
+    @GetMapping
+    public List<Product> getAllProducts(){
        return productService.getAllProducts();
     }
 
     @GetMapping("/{id}")
-    public ProductDTO getProductByID(@PathVariable String id){
-        return productService.getProductByID(Integer.parseInt(id));
+    public Product getProductByID(@PathVariable Long id){
+        return productService.getProductByID(id);
     }
     @PostMapping
-    public void addNewProduct(@RequestBody NewProductDTO productDTO){
+    public ResponseEntity addNewProduct(@RequestBody NewProductDTO productDTO){
         productService.addNewProduct(productDTO);
-    }*/
+        return ResponseEntity.ok().build();
+    }
 }

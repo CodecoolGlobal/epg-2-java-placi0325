@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/clients")
@@ -28,7 +27,7 @@ public class ClientController {
 
     @GetMapping("/{id}")
     public Client getClientByID(@PathVariable Long id) {
-        return clientService.getClientByID(id);
+        return clientService.getClientById(id);
     }
 
     @PostMapping
@@ -39,12 +38,12 @@ public class ClientController {
 
     @PutMapping("/{id}")
     public void updateClientById(@PathVariable("id") Long id, @RequestBody Client updatedClient) {
-        clientService.updateClientByID(id, updatedClient);
+        clientService.updateClientById(id, updatedClient);
     }
 
     @DeleteMapping("/{id}")
     public void deleteClientById(@PathVariable("id") Long id){
-        clientService.deleteClientByID(id);
+        clientService.deleteClientById(id);
     }
 
 }

@@ -18,6 +18,8 @@ public class Client {
     private Long id;
     private String clientName;
     private String password;
-    @OneToMany( mappedBy = "client")
+    @OneToMany( mappedBy = "seller")
     private List<Product> productsToSell;
+    @OneToMany( mappedBy = "buyer")
+    private List<Product> productsBought;
 }

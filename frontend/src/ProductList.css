@@ -1,0 +1,29 @@
+.productlistContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-gap: 70px; 
+  align-self: ;
+  
+}
+
+.listitem {
+    background-color: rgb(132, 232, 175);
+    width: 200px;
+    height: 150px;
+  border: solid 2px rgb(65, 10, 10);
+  border-radius: 15%;
+  font-size: large;
+  text-align: center;
+ 
+  padding: 10% 10% 10% 10%;
+}
+
+.ProductTable {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 50px;
+    padding-bottom: 80px;
+}

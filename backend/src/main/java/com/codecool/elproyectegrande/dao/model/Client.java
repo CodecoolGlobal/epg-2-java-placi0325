@@ -1,8 +1,9 @@
 package com.codecool.elproyectegrande.dao.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -10,15 +11,14 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Product {
+public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
-    @ManyToOne
-    @JsonBackReference
-    private Client client;
-    private double price;
+    private String clientname;
+    private String password;
+    @OneToMany( mappedBy = "client")
+    private List<Product> productsToSell;
 
 }

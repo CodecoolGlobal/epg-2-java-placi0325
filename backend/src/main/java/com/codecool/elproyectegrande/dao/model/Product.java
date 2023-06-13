@@ -18,7 +18,10 @@ public class Product {
     private String description;
     @ManyToOne
     @JsonBackReference
-    private Client client;
+    private Client seller;
     private double price;
 
+    @ManyToOne
+    @JsonBackReference
+    private Client buyer;
 }

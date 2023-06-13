@@ -8,29 +8,43 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("clients")
+@RequestMapping("/clients")
 public class ClientController {
 
-        private ClientService clientService;
+    private ClientService clientService;
 
-        @Autowired
-        public ClientController(ClientService clientService) {
-            this.clientService = clientService;
-        }
+    @Autowired
+    public ClientController(ClientService clientService) {
+        this.clientService = clientService;
+    }
 
-        @GetMapping
-        public List<Client> getAllClients(){return clientService.getAllClients();}
+    @GetMapping
+    public List<Client> getAllClients() {
+        return clientService.getAllClients();
+    }
 
-        @GetMapping("/{id}")
-        public Client getClientByID(@PathVariable Long id){
-            return clientService.getClientByID(id);
-        }
+    @GetMapping("/{id}")
+    public Client getClientByID(@PathVariable Long id) {
+        return clientService.getClientByID(id);
+    }
 
-        @PostMapping
-        public ResponseEntity addNewClient(@RequestBody NewClientDTO clientDTO){
-            clientService.addNewClient(clientDTO);
-            return ResponseEntity.ok().build();
-        }
+    @PostMapping
+    public ResponseEntity addNewClient(@RequestBody NewClientDTO clientDTO) {
+        clientService.addNewClient(clientDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/{id}")
+    public void updateClientById(@PathVariable("id") Long id, @RequestBody Client updatedClient) {
+        clientService.updateClientByID(id, updatedClient);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteClientById(@PathVariable("id") Long id){
+        clientService.deleteClientByID(id);
+    }
+
 }

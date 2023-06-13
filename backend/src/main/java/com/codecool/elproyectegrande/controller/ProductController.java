@@ -20,7 +20,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping
+    /*@GetMapping
     public List<ProductDTO> getAllProducts(){
        return productService.getAllProducts();
     }
@@ -32,5 +32,5 @@ public class ProductController {
     @PostMapping
     public void addNewProduct(@RequestBody NewProductDTO productDTO){
         productService.addNewProduct(productDTO);
-    }
+    }*/
 }

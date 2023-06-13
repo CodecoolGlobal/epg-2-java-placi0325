@@ -6,7 +6,7 @@ import com.codecool.elproyectegrande.controller.dto.ProductDTO;
 import java.util.List;
 
 public interface ProductDAO {
-    void addNewProduct(NewProductDTO product);
+    /*void addNewProduct(NewProductDTO product);
     List<ProductDTO> getAllProducts();
-    ProductDTO getProductByID(int id);
+    ProductDTO getProductByID(int id);*/
 }

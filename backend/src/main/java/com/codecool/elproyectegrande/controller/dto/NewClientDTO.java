@@ -1,3 +1,3 @@
 package com.codecool.elproyectegrande.controller.dto;
 
-public record NewClientDTO(String clientname,String password){ }
+public record NewClientDTO(String clientName,String password){ }

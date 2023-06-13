@@ -1,44 +1,40 @@
 package com.codecool.elproyectegrande.service;
 
 import com.codecool.elproyectegrande.controller.dto.NewProductDTO;
-import com.codecool.elproyectegrande.controller.dto.ProductDTO;
 import com.codecool.elproyectegrande.dao.model.Product;
 import com.codecool.elproyectegrande.dao.product.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
-public class ProductService implements ProductDAO {
-    
+public class ProductService {
+    private ProductDAO productDAO;
+
     @Autowired
-    public ProductService() {
-        
+    public ProductService(ProductDAO productDAO) {
+        this.productDAO = productDAO;
     }
 
-    /*@Override
-    public List<ProductDTO> getAllProducts() {
-        return products.stream().map(this::convertProductToDTO).toList();
+
+    public List<Product> getAllProducts() {
+        return productDAO.findAll();
     }
 
-    @Override
-    public ProductDTO getProductByID(int id) {
-        return convertProductToDTO(products.stream().filter(product -> product.getId() == id).findFirst().orElseThrow(NoSuchElementException::new));
+
+    public Product getProductByID(Long id) {
+        return productDAO.getById(id);
     }
 
-    @Override
     public void addNewProduct(NewProductDTO product) {
-        products.add(convertDTOtoProduct(product));
+        Product newProduct = Product.builder()
+                .name(product.name())
+                .description(product.description())
+                .client(product.client())
+                .price(product.price())
+                .build();
+        productDAO.save(newProduct);
     }
-
-    private Product convertDTOtoProduct(NewProductDTO productDTO) {
-        return new Product(products.size(), productDTO.name(), productDTO.description(), productDTO.userID(), productDTO.price());
-    }
-
-    private ProductDTO convertProductToDTO(Product product) {
-        return new ProductDTO(product.getId(), product.getName(), product.getDescription(), product.getUserID(), product.getPrice());
-    }*/
 }
+

@@ -1,12 +1,8 @@
 package com.codecool.elproyectegrande.dao.product;
 
-import com.codecool.elproyectegrande.controller.dto.NewProductDTO;
-import com.codecool.elproyectegrande.controller.dto.ProductDTO;
+import com.codecool.elproyectegrande.dao.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface ProductDAO extends JpaRepository<Product, Long> {
 
-public interface ProductDAO {
-    /*void addNewProduct(NewProductDTO product);
-    List<ProductDTO> getAllProducts();
-    ProductDTO getProductByID(int id);*/
 }

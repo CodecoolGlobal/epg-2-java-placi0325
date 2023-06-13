@@ -2,6 +2,7 @@ package com.codecool.elproyectegrande.controller;
 
 
 import com.codecool.elproyectegrande.controller.dto.NewProductDTO;
+import com.codecool.elproyectegrande.dao.model.Client;
 import com.codecool.elproyectegrande.dao.model.Product;
 import com.codecool.elproyectegrande.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("products")
+@RequestMapping("/products")
 public class ProductController {
 
     private ProductService productService;
@@ -35,4 +36,15 @@ public class ProductController {
         productService.addNewProduct(productDTO);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/{id}")
+    public void updateProductById(@PathVariable("id") Long id, @RequestBody Product updatedProduct) {
+        productService.updateProductByID(id, updatedProduct);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProductById(@PathVariable("id") Long id){
+        productService.deleteProductByID(id);
+    }
+
 }

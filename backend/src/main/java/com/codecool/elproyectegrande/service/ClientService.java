@@ -40,4 +40,14 @@ public class ClientService{
         clientDAO.save(newClient);
     }
 
+    public void updateClientByID(Long id, Client updateClient){
+        Client currentClient = getClientByID(id);
+        if (updateClient.getClientName() != null) currentClient.setClientName(updateClient.getClientName());
+        if (updateClient.getPassword() != null) currentClient.setPassword(updateClient.getPassword());
+    }
+
+    public void deleteClientByID(Long id){
+        clientDAO.deleteById(id);
+    }
+
 }

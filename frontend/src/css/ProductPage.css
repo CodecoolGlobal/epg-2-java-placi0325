@@ -1,5 +1,7 @@
 /* Styling for the product container */
 .product {
+  display: flex;
+  flex-direction: column;
     width: 400px;
     margin: 20px auto;
     padding: 20px;
@@ -20,7 +22,7 @@
   
   /* Styling for the product information */
   .product .info {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family:'Raleway', sans-serif;    
     font-size: 25px;
     line-height: 1.4;
   }
@@ -34,5 +36,8 @@
   .product .info p {
     margin-bottom: 15px;
   }
+
+  .product button {
+    align-self: flex-end;
+  }
   
-  /* Additional styling or modifications can be added as needed */

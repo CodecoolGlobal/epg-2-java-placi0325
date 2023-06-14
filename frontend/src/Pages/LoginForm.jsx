@@ -18,7 +18,7 @@ const LoginForm = (user) => {
         url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
       </style>
     <form className="signupform" onSubmit={onSubmit}>
-      <h1 className="header">Log in</h1>
+      <h1 className="headerForms">Log in</h1>
       {user && <input type="hidden" name="_id" defaultValue={user._id} />}
 
       <div className="control">

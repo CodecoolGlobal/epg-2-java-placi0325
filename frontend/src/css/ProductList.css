@@ -1,18 +1,38 @@
 .productlistContainer {
   display: grid;
-  grid-template-columns: repeat(5, 2fr);
-  grid-gap: 70px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 50px;
 }
 
 .listitem {
-  background-color: rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  background-color: rgb(255, 255, 255, 0.96);
+  border:  2px rgb(165, 51, 99) solid;
   width: 200px;
   height: 150px;
-  border: solid 2px rgb(0, 0, 0);
-  border-radius: 15%;
+  border-radius: 5%;
   font-size: large;
   text-align: center;
   padding: 10% 10% 10% 10%;
+  transition: 0.1s;
+}
+
+.listitem:hover {
+  border:  3px rgb(214, 75, 133) solid;
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.listitem p {
+  font-family:'Raleway', sans-serif;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(right, #14bccc, #7501ab, #04c6d8, #460166);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
 
 .ProductTable {

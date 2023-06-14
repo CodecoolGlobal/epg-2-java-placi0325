@@ -4,7 +4,7 @@ import ProductTable from "./ProductTable";
 import "../ProductList.css"
 
 const fetchProducts = (signal) => {
-  return fetch("/products", { signal }).then((res) => res.json());
+  return fetch("/products/available", { signal }).then((res) => res.json());
 };
 
 const ProductList = () => {

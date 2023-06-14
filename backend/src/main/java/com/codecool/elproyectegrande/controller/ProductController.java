@@ -21,15 +21,21 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Product> getAllProducts(){
        return productService.getAllProducts();
+    }
+
+    @GetMapping("/available")
+    public List<Product> getAvailableProducts(){
+        return productService.getAllAvailableProducts();
     }
 
     @GetMapping("/{id}")
     public Product getProductByID(@PathVariable Long id){
         return productService.getProductById(id);
     }
+
     @PostMapping
     public ResponseEntity addNewProduct(@RequestBody NewProductDTO productDTO){
         productService.addNewProduct(productDTO);

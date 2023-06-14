@@ -22,6 +22,10 @@ public class ProductService {
         return productDAO.findAll();
     }
 
+    public List<Product> getAllAvailableProducts(){
+        return getAllProducts().stream().filter(product -> product.isAvailable()).toList();
+    }
+
 
     public Product getProductById(Long id) {
         return productDAO.findProductById(id);
@@ -50,5 +54,6 @@ public class ProductService {
     public void deleteProductById(Long id){
         productDAO.deleteById(id);
     }
+
 }
 

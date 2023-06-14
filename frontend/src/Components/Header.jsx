@@ -25,11 +25,11 @@ const Header = () => {
            
           </div>
           <div className='button-containers'>
-              <button className='buttonz' onClick={() => navigate("/newproduct")}>Add new product</button>
+              <button className='button' onClick={() => navigate("/newproduct")}>Add new product</button>
           </div>
         </div>
       </header>
     )
   }
   
-  export default Header
+  export default Header;

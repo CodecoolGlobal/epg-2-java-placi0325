@@ -9,14 +9,11 @@ html,body {
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
@@ -49,7 +46,7 @@ body {
 .landingButton {
   position: relative;
   align-items: center;
-  background-color: #fee6e3;
+  background-color: #ffffff;
   border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;

@@ -54,6 +54,8 @@ public class ProductService {
                 .description(product.description())
                 .price(product.price())
                 .image(imageUrl)
+                //.seller(product.seller())
+                //.buyer(product.buyer())
                 .build();
         productDAO.save(newProduct);
     }
@@ -63,10 +65,15 @@ public class ProductService {
         if (updateProduct.getName() != null) currentProduct.setName(updateProduct.getName());
         if (updateProduct.getDescription() != null) currentProduct.setDescription(updateProduct.getDescription());
         if (updateProduct.getPrice() != 0) currentProduct.setPrice(updateProduct.getPrice());
+        /*if (updateProduct.getSeller() != null) currentProduct.setSeller(updateProduct.getSeller());
+        if (updateProduct.getBuyer() != null) currentProduct.setBuyer(updateProduct.getBuyer());*/
     }
 
     public void deleteProductById(Long id){
         productDAO.deleteById(id);
     }
-}
 
+    /*public List<Product> getAllAvailableProducts(){
+        return getAllProducts().stream().filter(product -> product.isAvailable()).toList();
+    }*/
+}

@@ -1,6 +1,6 @@
+import "../css/NewProductForm.css";
 
-const NewProductForm = ( {onCancel, onSave }) => {
-
+const NewProductForm = ({ onCancel, onSave }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -12,47 +12,48 @@ const NewProductForm = ( {onCancel, onSave }) => {
       return acc;
     }, {});
 
-    console.log(product)
     return onSave(product);
   };
 
-    
-
   return (
-    <div>
-      <div>
-        <form onSubmit={onSubmit}>
-          <h1>Upload the item you want to sell!</h1>
-          <div>
-            <label htmlFor="name">Product name:</label>
-            <input
-              defaultValue={"Please write in the item name"}
-              name="name"
-              id="name"
-            />
+    <div className="firstdiv">
+      <div class="container">
+        <form className="product-form" onSubmit={onSubmit}>
+          <h1 class="text">Upload the item you want to sell!</h1>
+          <div class="form-row">
+            <div class="input-data">
+              <input name="name" id="name" required />
+              <label htmlFor="name">Product name:</label>
+              <div class="underline"></div>
+            </div>
 
-            <label htmlFor="description">Product description:</label>
-            <input
-              defaultValue={"Details about the product"}
-              name="description"
-              id="description"
-            />
+            <div class="input-data textarea">
+              <input name="description" id="description" required></input>
+              <label htmlFor="description">Product description:</label>
+              <div class="underline"></div>
+            </div>
 
-            <label htmlFor="price">Price:</label>
-            <input
-              type="number"
-              defaultValue={"The price of the product"}
-              name="price"
-              id="price"
-            />
+            <div class="input-data">
+              <input type="number" name="price" id="price" required />
+              <label htmlFor="price">Price:</label>
+              <div class="underline"></div>
+            </div>
+          </div>
 
-            <button className="button" type="submit">
-              Upload
-            </button>
-            <button className="button" type="button" onClick={onCancel}>
-              Cancel
-            </button>
-
+          <div class="submit-btn">
+            <div class="input-data">
+              <input type="submit" class="button" value="Upload" />
+              <div class="inner"></div>
+            </div>
+            <div class="input-data">
+              <input
+                type="button"
+                class="button"
+                value="Cancel"
+                onClick={onCancel}
+              />
+              <div class="inner"></div>
+            </div>
           </div>
         </form>
       </div>

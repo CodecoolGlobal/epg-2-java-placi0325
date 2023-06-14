@@ -4,6 +4,14 @@ html,body {
   padding: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,7 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(45deg, #124517e7, #4dd3a0);
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -28,21 +36,6 @@ body {
 }
 
 
-.landingPage{
-  background-color: rgba(93,154,91,255);
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(3, auto);
-  align-content: center;
-  align-self: center;
-  margin-top: 8%;
-  margin-bottom: 10%;
-  margin-left: 35%;
-  margin-right: 35%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  border: 5px rgb(11, 61, 39) double;
-}
 
 .buttonContainer{
   display: grid;

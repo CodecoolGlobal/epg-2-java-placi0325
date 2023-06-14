@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../css/SignUpForm.css";
+import Footer from "../Components/Footer";
 
 const SignUpForm = (user) => {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ const SignUpForm = (user) => {
           </button>
         </div>
       </form>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import "../LandingPage.css";
+import "../css/LandingPage.css";
 import logo from "../Images/prelovedlogo.png";
 import { Link } from "react-router-dom";
 

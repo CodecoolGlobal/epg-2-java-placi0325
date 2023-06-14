@@ -8,6 +8,7 @@ import ErrorPage from './Pages/ErrorPage';
 import ProductList from './Pages/ProductList';
 import SignUpForm from './Pages/SignUpForm';
 import LoginForm from './Pages/LoginForm';
+import ProductPage from './Pages/ProductPage';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
       path: "/login",
       element: <LoginForm />
+    },
+    {
+      path:"/products/:id",
+      element:<ProductPage/>
     }
   ]
 }

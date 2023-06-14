@@ -1,5 +1,5 @@
 import ProductLayoutInList from "../Components/ProductLayoutInList";
-import "../ProductList.css"
+import "../css/ProductList.css"
 
 const ProductTable = ( { products } ) => {
 
@@ -12,7 +12,7 @@ const ProductTable = ( { products } ) => {
               </tr>
             </thead>
             <tbody className="productlistContainer">
-              {products.map((product) => (
+              {products && products.map((product) => (
                 <tr key={product.id}>
                  <td>
                  <ProductLayoutInList product={product} />

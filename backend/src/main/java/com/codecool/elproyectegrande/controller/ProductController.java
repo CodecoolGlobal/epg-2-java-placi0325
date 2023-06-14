@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -36,7 +37,7 @@ public class ProductController {
         return productService.getProductById(id);
     }
     @PostMapping
-    public ResponseEntity addNewProduct(@RequestBody NewProductDTO productDTO){
+    public ResponseEntity addNewProduct(@RequestBody NewProductDTO productDTO) throws IOException {
         productService.addNewProduct(productDTO);
         return ResponseEntity.ok().build();
     }

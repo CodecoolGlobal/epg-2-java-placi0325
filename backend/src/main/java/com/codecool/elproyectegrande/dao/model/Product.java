@@ -20,8 +20,8 @@ public class Product {
     @JsonBackReference
     private Client seller;
     private double price;
-
     @ManyToOne
     @JsonBackReference
     private Client buyer;
+    private String image;
 }

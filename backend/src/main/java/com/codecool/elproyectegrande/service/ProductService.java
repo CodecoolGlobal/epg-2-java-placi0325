@@ -23,18 +23,32 @@ public class ProductService {
     }
 
 
-    public Product getProductByID(Long id) {
-        return productDAO.getById(id);
+    public Product getProductById(Long id) {
+        return productDAO.findProductById(id);
     }
 
     public void addNewProduct(NewProductDTO product) {
         Product newProduct = Product.builder()
                 .name(product.name())
                 .description(product.description())
-                .client(product.client())
+                .seller(product.seller())
                 .price(product.price())
+                .buyer(product.buyer())
                 .build();
         productDAO.save(newProduct);
+    }
+
+    public void updateProductById(Long id, Product updateProduct){
+        Product currentProduct = getProductById(id);
+        if (updateProduct.getName() != null) currentProduct.setName(updateProduct.getName());
+        if (updateProduct.getDescription() != null) currentProduct.setDescription(updateProduct.getDescription());
+        if (updateProduct.getSeller() != null) currentProduct.setSeller(updateProduct.getSeller());
+        if (updateProduct.getPrice() != 0) currentProduct.setPrice(updateProduct.getPrice());
+        if (updateProduct.getBuyer() != null) currentProduct.setBuyer(updateProduct.getBuyer());
+    }
+
+    public void deleteProductById(Long id){
+        productDAO.deleteById(id);
     }
 }
 

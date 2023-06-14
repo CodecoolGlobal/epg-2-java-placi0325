@@ -2,7 +2,6 @@ package com.codecool.elproyectegrande.service;
 
 
 import com.codecool.elproyectegrande.controller.dto.NewClientDTO;
-import com.codecool.elproyectegrande.dao.model.Product;
 import com.codecool.elproyectegrande.dao.user.ClientDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +25,8 @@ public class ClientService{
     }
 
 
-    public Client getClientByID(Long id) {
-        return clientDAO.getById(id);
+    public Client getClientById(Long id) {
+        return clientDAO.findClientById(id);
     }
 
 
@@ -38,6 +37,17 @@ public class ClientService{
                 .password(client.password())
                 .build();
         clientDAO.save(newClient);
+    }
+
+
+    public void updateClientById(Long id, Client updateClient){
+        Client currentClient = getClientById(id);
+        if (updateClient.getClientName() != null) currentClient.setClientName(updateClient.getClientName());
+        if (updateClient.getPassword() != null) currentClient.setPassword(updateClient.getPassword());
+    }
+
+    public void deleteClientById(Long id){
+        clientDAO.deleteById(id);
     }
 
 }

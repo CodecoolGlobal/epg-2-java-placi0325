@@ -1,6 +1,7 @@
 import "../css/LandingPage.css";
 import logo from "../Images/prelovedlogo.png";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer.jsx"
 
 const LandingPage = () => {
   return (
@@ -19,6 +20,7 @@ const LandingPage = () => {
         <button type="button" className="landingButton">Login</button>
       </Link>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,37 @@
+.headerDiv {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
+    height: 4em;
+  }
+  
+  .headerDiv>.logoContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-column: 1;
+  }
+  
+  .picture {
+    min-width: 3em;
+    max-height: 2em;
+  }
+  
+  .buttonz {   
+    border-radius: 10px;
+    width: 13em;
+    height: 3em;
+    font-family: Fauna One, serif;
+  }
+  
+  .buttonz:hover {
+    cursor: pointer;
+    height: 3em;
+  }
+  
+  .headerDiv>.button-containers {
+    grid-column: 4;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Loading from "./Loading/Loading";
 import "../css/ProductPage.css";
 
+
 const ProductPage = () => {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);

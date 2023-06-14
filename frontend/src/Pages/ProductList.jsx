@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Loading from "./Loading/Loading";
 import ProductTable from "./ProductTable";
 import "../css/ProductList.css"
+import Footer from "../Components/Footer";
 
 const fetchProducts = (signal) => {
-  return fetch("/products/available", { signal }).then((res) => res.json());
+  return fetch("/products/all", { signal }).then((res) => res.json());
 };
 
 const ProductList = () => {
@@ -36,6 +37,7 @@ const ProductList = () => {
 
   return <div>
     <ProductTable products={data}/>
+    <Footer />
   </div>;
 };
 

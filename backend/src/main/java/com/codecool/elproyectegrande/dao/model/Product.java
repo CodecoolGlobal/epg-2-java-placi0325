@@ -17,15 +17,13 @@ public class Product {
     private String name;
     private String description;
     private double price;
+    private String image;
+  
     /*@ManyToOne
     @JsonBackReference(value="seller-product")
     private Client seller;
-
     @ManyToOne
     @JsonBackReference(value="buyer-product")
     private Client buyer;
-
-    public boolean isAvailable(){
-        return buyer == null;
-    }*/
+    public boolean isAvailable(){return buyer == null;}*/
 }

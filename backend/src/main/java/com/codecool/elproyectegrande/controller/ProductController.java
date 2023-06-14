@@ -26,10 +26,10 @@ public class ProductController {
        return productService.getAllProducts();
     }
 
-     @GetMapping("/available")
+     /*@GetMapping("/available")
     public List<Product> getAvailableProducts(){
        return productService.getAllAvailableProducts();
-    }
+    }*/
 
     @GetMapping("/{id}")
     public Product getProductByID(@PathVariable Long id){

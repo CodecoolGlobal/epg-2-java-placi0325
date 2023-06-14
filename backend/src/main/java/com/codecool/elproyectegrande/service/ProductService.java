@@ -22,6 +22,21 @@ public class ProductService {
         return productDAO.findAll();
     }
 
+    public List<Product> getAllProductsOrderedByName(String sortOrder) {
+        if (sortOrder.equals("asc")) {
+            return productDAO.findAllByOrderByNameAsc();
+        } else {
+            return productDAO.findAllByOrderByNameDesc();
+        }
+    }
+
+    public List<Product> getAllProductsOrderedByPrice(String sortOrder) {
+        if (sortOrder.equals("asc")) {
+            return productDAO.findAllByOrderByPriceAsc();
+        } else {
+            return productDAO.findAllByOrderByPriceDesc();
+        }
+    }
 
     public Product getProductById(Long id) {
         return productDAO.findProductById(id);
@@ -38,7 +53,7 @@ public class ProductService {
         productDAO.save(newProduct);
     }
 
-    public void updateProductById(Long id, Product updateProduct){
+    public void updateProductById(Long id, Product updateProduct) {
         Product currentProduct = getProductById(id);
         if (updateProduct.getName() != null) currentProduct.setName(updateProduct.getName());
         if (updateProduct.getDescription() != null) currentProduct.setDescription(updateProduct.getDescription());
@@ -47,9 +62,10 @@ public class ProductService {
         if (updateProduct.getBuyer() != null) currentProduct.setBuyer(updateProduct.getBuyer());*/
     }
 
-    public void deleteProductById(Long id){
+    public void deleteProductById(Long id) {
         productDAO.deleteById(id);
     }
+
 
     /*public List<Product> getAllAvailableProducts(){
         return getAllProducts().stream().filter(product -> product.isAvailable()).toList();
